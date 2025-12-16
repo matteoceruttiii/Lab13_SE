@@ -1,0 +1,21 @@
+from dataclasses import dataclass
+
+
+@dataclass
+class Gene:
+    id :str
+    funzione : str
+    essenziale : str
+    cromosoma : int
+
+    def __str__(self):
+        return f"id: {self.id} - funzione: {self.funzione} - cromosoma: {self.cromosoma}"
+
+    def __repr__(self):
+        return f"{self.id} {self.cromosoma}"
+
+    def __eq__(self, other):
+        return self.id == other.id
+
+    def __hash__(self):
+        return hash(self.id)
